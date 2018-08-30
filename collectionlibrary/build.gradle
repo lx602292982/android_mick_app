@@ -1,0 +1,66 @@
+apply plugin: 'com.android.library'
+apply from : "config.gradle"
+
+
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+android {
+    compileSdkVersion app.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion app.minSdkVersion
+        targetSdkVersion app.targetSdkVersion
+        versionCode app.versionCode
+        versionName app.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation supportDependencies.appCompat
+    implementation supportDependencies.recyclerview
+
+    /**
+     * 动画集合
+     * https://github.com/81813780/AVLoadingIndicatorView
+     */
+    implementation thirdDependencies.avi
+    /**
+     * retrofit和rxjava
+     */
+    implementation thirdDependencies.rxjava
+    implementation thirdDependencies.rxandroid
+    implementation thirdDependencies.retrofit
+    implementation thirdDependencies.gsonConverter
+    implementation thirdDependencies.rxjavaAdapter
+    implementation thirdDependencies.loggingInterceptor
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:3.6.1"
+    implementation "com.github.bumptech.glide:okhttp-integration:1.3.1"
+    implementation "jp.wasabeef:glide-transformations:2.0.1"
+
+}
+
+version = "1.1.5"
+group = "com.youngman"
+
+

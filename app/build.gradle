@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+apply from: 'config.gradle'
+
+android {
+
+    compileSdkVersion app.compileSdkVersion
+    defaultConfig {
+        applicationId "com.yzqs.android_app"
+        minSdkVersion app.minSdkVersion
+        targetSdkVersion app.targetSdkVersion
+        versionCode app.versionCode
+        versionName app.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation supportDependencies.appCompat
+    implementation supportDependencies.constraint
+    implementation thirdDependencies.utilcode
+    implementation supportDependencies.appCompat
+    implementation supportDependencies.cardView
+    implementation supportDependencies.design
+    implementation thirdDependencies.butterknife
+    annotationProcessor thirdDependencies.butterknifeCompiler
+    implementation thirdDependencies.glide
+    annotationProcessor thirdDependencies.glideCompiler
+    implementation thirdDependencies.multidex
+    implementation thirdDependencies.location
+    implementation project(':collectionlibrary')
+    implementation thirdDependencies.gson
+}
