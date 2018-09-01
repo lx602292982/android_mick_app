@@ -1,4 +1,4 @@
-package com.yzqs.android_app.baseApp;
+package com.yzqs.android_app.baseapp;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

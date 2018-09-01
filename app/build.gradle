@@ -36,4 +36,18 @@ dependencies {
     implementation thirdDependencies.location
     implementation project(':collectionlibrary')
     implementation thirdDependencies.gson
+    implementation thirdDependencies.rxjava
+    implementation thirdDependencies.rxandroid
+    implementation thirdDependencies.retrofit
+    implementation thirdDependencies.gsonConverter
+    implementation thirdDependencies.rxjavaAdapter
+    implementation thirdDependencies.loggingInterceptor
+    implementation thirdDependencies.banner
+    implementation files('libs/universal-image-loader-1.9.5.jar')
+
+
+    // 底部菜单
+    implementation('com.flyco.tablayout:FlycoTabLayout_Lib:2.1.0@aar') {
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
 }

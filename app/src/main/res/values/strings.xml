@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">android_app</string>
+    <string name="kown">知道了</string>
+
 </resources>

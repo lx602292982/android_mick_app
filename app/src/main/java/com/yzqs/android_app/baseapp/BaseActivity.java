@@ -1,4 +1,4 @@
-package com.yzqs.android_app.baseApp;
+package com.yzqs.android_app.baseapp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -35,6 +35,7 @@ public abstract class BaseActivity<T extends BaseModel,E extends BasePresenter> 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         unbinder= ButterKnife.bind(this);
+
         mCommonToolbar = ButterKnife.findById(this, R.id.common_toolbar);
         titleTv= ButterKnife.findById(this, R.id.titleTv);
         if(mCommonToolbar!=null){

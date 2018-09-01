@@ -1,4 +1,4 @@
-package com.yzqs.android_app.been;
+package com.yzqs.android_app.beans;
 
 public class Location {
     private double latitude;
